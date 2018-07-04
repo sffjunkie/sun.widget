@@ -5,7 +5,7 @@
     timezone: 'Europe/London'
   }
 
-  y_percent: 80
+  y_factor: 80
   ray_percent: 100
 
   command: "PYTHONPATH=. python sun_elevation.py #{settings.latitude} #{settings.longitude} #{settings.timezone}"
@@ -31,7 +31,7 @@
     angle = parseFloat(output)
     rad = (270 + angle) * Math.PI / 180
     leftPercent = (Math.sin(rad) + 1) * 100 / 2
-    bottomPercent = Math.cos(rad) * @y_percent
+    bottomPercent = Math.cos(rad) * @y_factor
 
     sun = $(domEl).find("#sun")
     sun.css("left", "#{leftPercent}%").css("bottom", "#{bottomPercent}%")
