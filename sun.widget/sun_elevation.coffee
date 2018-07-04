@@ -8,7 +8,7 @@
   y_percent: 80
   ray_percent: 100
 
-  command: "python sun_elevation.py #{settings.latitude} #{settings.longitude} #{settings.timezone}"
+  command: "PYTHONPATH=. python sun_elevation.py #{settings.latitude} #{settings.longitude} #{settings.timezone}"
 
   render: -> """
     <div id="sun">
