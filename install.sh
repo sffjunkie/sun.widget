@@ -1,2 +1,2 @@
 #!/bin/sh
-cp -r strip-calendar.widget ~/Library/Application\ Support/Übersicht/widgets/
+cp -r sun.widget ~/Library/Application\ Support/Übersicht/widgets/
