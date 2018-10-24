@@ -9,6 +9,14 @@ settings = {
   sun_color: ["#FFC404", "#FFFAC8", "#FFFCF0"]
 }
 
+Date.prototype.stdTimezoneOffset = () ->
+    jan = new Date(this.getFullYear(), 0, 1)
+    jul = new Date(this.getFullYear(), 6, 1)
+    Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset())
+
+Date.prototype.isDstObserved = () ->
+    this.getTimezoneOffset() < this.stdTimezoneOffset()
+
 {
   command: "PYTHONPATH=. python sun_elevation.py " +
     "#{settings.latitude} #{settings.longitude} #{settings.timezone}"
